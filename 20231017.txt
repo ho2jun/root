@@ -83,18 +83,75 @@ day 2
 
 3. 문자형 char = 2byte(숫자로 표현)
    아스키 코드/ 유니코드 = 변경해서 사용한다.
- 1. 작은 따옴표로 묶어서 저장한다.
+ 1) 작은 따옴표로 묶어서 저장한다.
      char ch1 = "A"; X => 'A' -> 아스키 코드 65번 찾기
- 2. 공백이 없는 따옴표는 에러난다.
+ 2) 공백이 없는 따옴표는 에러난다.
      char ch1 = ' '; // 에러 공백X
- 3. 문자 그대로 저장되는게 아니다 유니코드(2byte=65535문자)/ 아스키코드(128개1byte)로
+ 3) 문자 그대로 저장되는게 아니다 유니코드(2byte=65535문자)/ 아스키코드(128개1byte)로
     변환된다.
- 4. 캐릭터는 한가지 문자로만 표현된다.
+ 4) 캐릭터는 한가지 문자로만 표현된다.
 
 4. 기본 논리형 표현 (=boolean) = 1byte
    값의 범위는 : true / false
+   boolean gender = true;
 
+5. 참조 자료형
+ 1) 기본 자료형 (정수 : int long byte / 실수 : float double/문자 : char)과 참조 자료형
+     * stack 메모리 공간을 할당 받아 저장한다.
+ 2) 참조 자료형 = 주소저장하는 방식 <- 메모리
+     * heap영역이다.
+     Strong / Date -> 문자열을 객체로 받아서 프린트
+     String name = new String();
+     name = "김빵빵";
 
+6. 형 변환(= 자료형 자료형끼리 선언)X
+   연산을 수행할때 마지막 연산값을 저장한다.
+    float ft = 100; // 값을 저장하는거랑 자료형선언이랑 다르다.
+    * 변수가 가진 자료형을 다른 자료형으로 변환하는 방식 (=형변환)
+    
+    @자동형변환
+    서로 다른 자료형간의 대입이나 연산을 할 경우
+    자바의 컴파일러가 자동으로 형변환을 생략할수 있다.
+    * 자동으로 형변환 가능한 예시(데이터 손실이 없음)
+     - 크기가 작은 자료형(short<int)에서 큰 자료형으로 변환할때
+     - 정수형이 실수형으로 변환할때
+    float ft = (int)100;
+     - 정수형이 실수형으로 변환할때
+    int num1 = 12345;
+    double num2 = (int)num1; //100.0
+     
+    @강제형변환
+    1. 큰 자료형의 변수를 작은 자료형으로 담아내는것이다.
+    2. 데이터가 보존 될 수 있거나 손실이 발생되는 경우도 있다.
+       자료형 변수명 = (강제로 변환할 자료형)
+      int num1 = 10;
+      byte num2 = (byte)num1;
+      
+      * 자동 형 변환(업캐스팅)
+      * 강제 형 변환(다운 캐스팅)
+
+    @데이터 입력
+     // 자바 라이브러리 import
+        import java.util.Scanner;
+    // Scanner 객체 선언
+        Scanner input = new Scanner(System.in);
+    // 값을 입력 받기
+        int input_num = intput.nextlnt();
+    - 정수형
+       byte nextByte() : 입력 받을 값을 byte형으로 변환
+       short nextshort() : 입력 받을 값을 short형으로 변환
+       int nextint() : 입력 받을 값을 int형으로 변환
+       long nextlong() : 입력 받을 값을 long형으로 변환
+
+    - 실수형
+       float nextFloat() : 입력 받을 값을 float로 변환
+       double nextDouble : 입력 받을 밧을 Double로 변환
+
+    - 문자형
+       String nextLine() : 입력받은 전체의 문자열 타입을 엔터로 구분
+       String next() : 입력 받은 값을 문자열으로 반환 (띄어쓰기)   
+  
+    
 
 
 
